@@ -18,26 +18,32 @@ function mail() {
 
     var email = prompt("Please enter your email address");
 
+    var emailFound = false;
+
     for(var i = 0; i < mailList.length; i++){
         if(mailList[i] === email.toLowerCase()){
-            alert("Your email is valid");
-            break;
+        emailFound = true;
+        break;
         } 
     }
 
-    if(i >= mailList.length){
-        alert("The inserted mail is incorrect. retry");
-        mail();
+    if(emailFound){
+        alert("Your email is valid");
+    }
+    else{
+    alert("The inserted mail is incorrect. retry");
+    mail();
     }
 }
+
 
 //DICE
 function dice() {
 
-    var userNumber = Math.floor(Math.random() * 6 + 1);
+    var userNumber = Math.floor(Math.random() * 6) + 1;
     alert("Your number is: " + userNumber);
 
-    var pcNumber = Math.floor(Math.random() * 6 + 1);
+    var pcNumber = Math.floor(Math.random() * 6) + 1;
     alert("The pc number is: " + pcNumber);
 
     if(userNumber > pcNumber){
